@@ -1,5 +1,4 @@
 import 'package:angular/angular.dart';
-
 import 'src/RaidHelper/raid_helper_component.dart';
 
 // AngularDart info: https://webdev.dartlang.org/angular

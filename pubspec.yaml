@@ -12,6 +12,7 @@ dependencies:
   angular_components: ^0.13.0
   csv: ^4.0.3
   file: ^5.0.10
+  ng_bootstrap: any
 
 dev_dependencies:
   angular_test: ^2.3.0

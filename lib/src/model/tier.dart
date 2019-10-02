@@ -8,6 +8,16 @@ const tier_mapping = {
   'SS': 6
 };
 
+const tier_color_mapping = {
+  // Key:    Value
+  'D': '#FF0000',
+  'C': '#FFA500',
+  'B': '#FFFF00',
+  'A': '#00FF00',
+  'S': '#00c5ff',
+  'SS': '#00c5ff'
+};
+
 class Tier{
   String tier;
   int value;
@@ -18,7 +28,10 @@ class Tier{
     if (tier is! String){
       tier = 'B';
     }
+    return Tier(tier, tier_mapping.containsKey(tier) ? tier_mapping[tier] : 3);
+  }
 
-    return Tier(tier, tier_mapping[tier]);
+  String color(){
+    return tier_color_mapping[this.tier];
   }
 }

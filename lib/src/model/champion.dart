@@ -51,4 +51,44 @@ class Champ {
         Tier.from_tier(list[17]), Tier.from_tier(list[18]),
         Tier.from_tier(list[19]), Tier.from_tier(list[20]), url);
   }
+  
+  bool isFood(){
+    return this.Overall.value <= 3 &&
+        this.Campaign.value <= 3 &&
+        this.Arena_Off.value <= 3 &&
+        this.Arena_Deff.value <= 3 &&
+        this.CB.value <= 3 &&
+        this.CB_T6.value <= 3 &&
+        this.IceG.value <= 3 &&
+        this.Dragon.value <= 3 &&
+        this.Spider.value <= 3 &&
+        this.FK.value <= 3 &&
+        this.Mino.value <= 3 &&
+        this.Force.value <= 3 &&
+        this.Magic.value <= 3 &&
+        this.Spirit.value <= 3 &&
+        this.Void.value <= 3 &&
+        this.Faction_Wars.value <= 3;
+  }
+
+  bool isGood(){
+    return this.Overall.value >= 5 ||
+        this.Campaign.value >= 5 ||
+        this.Arena_Off.value >= 5 ||
+        this.Arena_Deff.value >= 5 ||
+        this.CB.value >= 5 ||
+        this.CB_T6.value >= 5 ||
+        this.IceG.value >= 5 ||
+        this.Dragon.value >= 5 ||
+        this.Spider.value >= 5 ||
+        this.FK.value >= 5 ||
+        this.Mino.value >= 5 ||
+        this.Force.value >= 5 ||
+        this.Magic.value >= 5 ||
+        this.Spirit.value >= 5 ||
+        this.Void.value >= 5 ||
+        this.Faction_Wars.value >= 5;
+  }
 }
+
+

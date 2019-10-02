@@ -1,12 +1,60 @@
 <!-- Components info: https://webdev.dartlang.org/components -->
-<div>
-  <div class="d-flex align-content-start flex-wrap" *ngIf="champs.isNotEmpty">
-      <div *ngFor="let champ of champs; let i=index" class="p-2">
-          <img src="{{champ.image}}" class="rarity-{{champ.Rarity.value}}"
-               onerror="this.onerror=null; this.src='assets/unknown.jpg'"
-               data-toggle="tooltip" data-html="true" title="<b>{{champ.Overall.tier}}</b>">
-      </div>
-  </div>
+<div id="work" class="container">
+    <div class="row">
+        <div class="col-sm"></div>
+        <div class="col-sm">
+            <img (click)="filterReset()" class="filter" src="assets/reset.png">
+            <img (click)="filterFood()" class="filter" src="assets/drumstick.png">
+            <img (click)="filterGood()" class="filter" src="assets/ok.png">
+        </div>
+        <div class="col-sm"> </div>
+    </div>
 </div>
-
+<div class="d-flex align-content-start flex-wrap" *ngIf="champs.isNotEmpty">
+    <div *ngFor="let champ of champs; let i=index" class="p-2">
+        <img src="{{champ.image}}" class="rarity-{{champ.Rarity.value}}"
+             onerror="this.onerror=null; this.src='assets/unknown.jpg'">
+        <bs-tooltip placement="bottom">
+            <table class="table table-sm table-dark">
+                <thead>
+                <tr>
+                    <th scope="col" colspan="3">{{champ.Name}}</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="small" style="color: {{champ.Overall.color()}}">Overall: {{champ.Overall.tier}}</td>
+                    <td class="small" style="color: {{champ.Campaign.color()}}">Campaign: {{champ.Campaign.tier}}</td>
+                    <td class="small" style="color: {{champ.Arena_Off.color()}}">Arena Offense: {{champ.Arena_Off.tier}}</td>
+                </tr>
+                <tr>
+                    <td class="small" style="color: {{champ.Arena_Deff.color()}}">Arena Deffense: {{champ.Arena_Deff.tier}}</td>
+                    <td class="small" style="color: {{champ.CB.color()}}">Clan Boss: {{champ.CB.tier}}</td>
+                    <td class="small" style="color: {{champ.CB_T6.color()}}">Clan Boss T6: {{champ.CB_T6.tier}}</td>
+                </tr>
+                <tr>
+                    <td class="small" style="color: {{champ.IceG.color()}}">Ice Golem: {{champ.IceG.tier}}</td>
+                    <td class="small" style="color: {{champ.Dragon.color()}}">Dragon Lair: {{champ.Dragon.tier}}</td>
+                    <td class="small" style="color: {{champ.Spider.color()}}">Spider Den: {{champ.Spider.tier}}</td>
+                </tr>
+                <tr>
+                    <td class="small" style="color: {{champ.FK.color()}}">Fire Knight: {{champ.FK.tier}}</td>
+                    <td class="small" style="color: {{champ.Mino.color()}}">Minotaur: {{champ.Mino.tier}}</td>
+                    <td class="small" style="color: {{champ.Force.color()}}">Force keep: {{champ.Force.tier}}</td>
+                </tr>
+                <tr>
+                    <td class="small" style="color: {{champ.Magic.color()}}">Magic Keep: {{champ.Magic.tier}}</td>
+                    <td class="small" style="color: {{champ.Spirit.color()}}">Spirit keep: {{champ.Spirit.tier}}</td>
+                    <td class="small" style="color: {{champ.Void.color()}}">Void keep: {{champ.Void.tier}}</td>
+                </tr>
+                <tr>
+                    <td class="small" style="color: {{champ.Faction_Wars.color()}}">Faction Wars: {{champ.Faction_Wars.tier}}</td>
+                    <td class="small" style=""></td>
+                    <td class="small" style=""></td>
+                </tr>
+                </tbody>
+            </table>
+        </bs-tooltip>
+    </div>
+</div>
 

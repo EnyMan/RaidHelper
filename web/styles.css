@@ -15,6 +15,11 @@ img {
   width: 75%;
 }
 
+.filter{
+  width: 4em;
+  cursor: pointer;
+}
+
 .rarity-0 {
   border: 2px solid #1660ff;
   box-shadow: 0 0 4px #18abff;
