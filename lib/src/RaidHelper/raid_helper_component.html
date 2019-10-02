@@ -1,0 +1,12 @@
+<!-- Components info: https://webdev.dartlang.org/components -->
+<div>
+  <div class="d-flex align-content-start flex-wrap" *ngIf="champs.isNotEmpty">
+      <div *ngFor="let champ of champs; let i=index" class="p-2">
+          <img src="{{champ.image}}" class="rarity-{{champ.Rarity.value}}"
+               onerror="this.onerror=null; this.src='assets/unknown.jpg'"
+               data-toggle="tooltip" data-html="true" title="<b>{{champ.Overall.tier}}</b>">
+      </div>
+  </div>
+</div>
+
+
