@@ -12,6 +12,8 @@ class RaidHelperService {
   List<String> mockTodoList = <String>[];
 //  var dir = Directory.current;
   List<Champ> champs = List();
+  bool sort = false;
+  bool sortPolarity = false;
 
   Future<List<String>> getTodoList() async => mockTodoList;
 

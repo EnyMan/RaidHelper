@@ -36,6 +36,7 @@ class RaidHelperComponent implements OnInit {
   }
 
   void filterFood(){
+    raidHelperService.sort = false;
     this.champs = List();
     for (int i = 0; i < raidHelperService.champs.length; i++) {
       if (raidHelperService.champs[i].isFood()){
@@ -46,14 +47,26 @@ class RaidHelperComponent implements OnInit {
 
   void filterReset(){
     this.champs = raidHelperService.champs;
+    raidHelperService.sort = false;
   }
 
   void filterGood(){
+    raidHelperService.sort = false;
     this.champs = List();
     for (int i = 0; i < raidHelperService.champs.length; i++) {
       if (raidHelperService.champs[i].isGood()){
         this.champs.add(raidHelperService.champs[i]);
       }
     }
+  }
+
+
+  void filterSort(){
+    if (!raidHelperService.sort){
+     this.champs.sort((a, b) => a.Rarity.value - b.Rarity.value);
+     raidHelperService.sort = true;
+     return;
+    }
+    this.champs = this.champs.reversed.toList();
   }
 }
