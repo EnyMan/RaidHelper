@@ -12,6 +12,6 @@ class Rank {
   Rank(this.rarity, this.value);
 
   static Rank from_rarity(String rarity){
-    return Rank(rarity, rank_mapping[rarity]);
+    return Rank(rarity, rank_mapping[rarity] ?? 0);
   }
 }

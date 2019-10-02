@@ -28,7 +28,7 @@ class Tier{
     if (tier is! String){
       tier = 'B';
     }
-    return Tier(tier, tier_mapping.containsKey(tier) ? tier_mapping[tier] : 3);
+    return Tier(tier, tier_mapping[tier] ?? 3);
   }
 
   String color(){
