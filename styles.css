@@ -1,0 +1,36 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(https://fonts.googleapis.com/css?family=Material+Icons);
+
+body {
+  margin: 0 auto;
+  padding: 5vw;
+  background-color: gray;
+}
+
+* {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+}
+
+img {
+  width: 75%;
+}
+
+.filter{
+  width: 4em;
+  cursor: pointer;
+}
+
+.rarity-0 {
+  border: 2px solid #1660ff;
+  box-shadow: 0 0 4px #18abff;
+}
+
+.rarity-1 {
+  border: 2px solid #aa11ff;
+  box-shadow: 0 0 4px #e816ff;
+}
+
+.rarity-2 {
+  border: 2px solid #ffd111;
+  box-shadow: 0 0 4px #fff714;
+}
