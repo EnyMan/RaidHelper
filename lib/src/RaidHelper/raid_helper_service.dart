@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:http/http.dart' as http;
 import 'package:csv/csv.dart';
 import 'package:RaidHelper/src/model/champion.dart';
 import 'package:angular/core.dart';

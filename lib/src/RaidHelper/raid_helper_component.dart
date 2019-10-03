@@ -32,7 +32,7 @@ class RaidHelperComponent implements OnInit {
   @override
   Future<Null> ngOnInit() async {
     await raidHelperService.fetchData();
-    this.champs = raidHelperService.champs;
+    this.champs = await raidHelperService.champs;
   }
 
   void filterFood(){
