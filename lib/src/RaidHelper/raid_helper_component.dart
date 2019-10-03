@@ -24,8 +24,6 @@ import 'package:ng_bootstrap/ng_bootstrap.dart';
 class RaidHelperComponent implements OnInit {
   final RaidHelperService raidHelperService;
   List<Champ> champs = List();
-  List<String> items = [];
-  String newTodo = '';
 
   RaidHelperComponent(this.raidHelperService);
 
