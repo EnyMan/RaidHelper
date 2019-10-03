@@ -4,6 +4,7 @@ import 'package:http/http.dart' as http;
 import 'package:csv/csv.dart';
 import 'package:RaidHelper/src/model/champion.dart';
 import 'package:angular/core.dart';
+import 'dart:html';
 
 /// Mock service emulating access to a to-do list stored on a server.
 @Injectable()
@@ -21,9 +22,10 @@ class RaidHelperService {
     if (this.champs.isNotEmpty){
       return;
     }
-    var response = await http.get(this.tier_list);
-    if (response.statusCode == 200) {
-      var raw_tier_list_csv = const CsvToListConverter().convert(response.body);
+    final response = await HttpRequest.getString('champions.csv');
+    //var response = await http.get(this.tier_list);
+    if (response.isNotEmpty) {
+      var raw_tier_list_csv = const CsvToListConverter().convert(response);
       bool is_header = false;
       String last_faction = "";
       for (int i = 0; i < raw_tier_list_csv.length; i++) {
@@ -42,7 +44,7 @@ class RaidHelperService {
         }
       }
     } else {
-      print("Request failed with status: ${response.statusCode}.");
+      print("Load failed.");
     }
   }
 }
