@@ -24,7 +24,7 @@ class RaidHelperService {
     final response = await HttpRequest.getString('champions.csv');
     //var response = await http.get(this.tier_list);
     if (response.isNotEmpty) {
-      var raw_tier_list_csv = const CsvToListConverter().convert(response);
+      var raw_tier_list_csv = await CsvToListConverter().convert(response);
       bool is_header = false;
       String last_faction = "";
       for (int i = 0; i < raw_tier_list_csv.length; i++) {
@@ -39,7 +39,7 @@ class RaidHelperService {
             last_faction = raw_tier_list_csv[i][0];
           }
           print(raw_tier_list_csv[i]);
-          this.champs.add(Champ.from_list(raw_tier_list_csv[i]));
+          this.champs.add( await Champ.from_list(raw_tier_list_csv[i]));
         }
       }
     } else {
